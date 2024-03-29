@@ -1,0 +1,741 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700&display=swap');
+
+*{ 
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+ /* Criando variaveis de cor  */
+:root{
+    --color-white: #fff;
+    --color-pink: #d12f7a;
+    --color-black: #0c0c0c;
+    --color-purple: #5f01ac;
+    --color-blue: #0000ff;
+   
+
+}
+
+html{
+    /* Deixando o scroll (rolagem) da página mais suave*/
+    scroll-behavior:smooth;
+    /*Alterando tamanho da fonte */
+    font-size: 10px;
+}
+
+body{
+    /* Definindo uma fonte para conteudos dentro do body*/
+    font-family: "Poppins", sans-serif;
+
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 100%;
+    padding: 15px 30px;
+    position: fixed;
+
+    background: transparent;
+    transition: all .3s ease-out;
+    z-index: 3;
+
+}
+.header-title{
+    text-decoration: none;
+}
+
+.header-title h1{
+    color: var(--color-white);
+
+    font-size: 2rem;
+    transition: opacity .3 ease;
+
+}
+
+.header-title h1:hover{
+    opacity: .8;
+
+}
+
+.navbar{
+    max-width: 350px;
+    width: 100%;
+}
+
+.navbar ul{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.navbar ul li{
+    list-style: none;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+/* fim do header */
+
+ /* Quando é definido por "#" significa que estou chamando um ID, caso contrario utilizar "." para chamar um class */
+  /* height - altura / width - largura */
+#person{
+    height: 100vh;
+    width: 100%;
+    /* deixando conteudo flexivel */ 
+    display: flex;
+    align-items: center;
+    /* definindo cor para o fundo da pagina */
+    background: var(--color-black);
+}
+
+.person-content{
+    height: 100%;
+    width: 50%;
+    background: var(--color-black);
+    display: flex;
+    /* alinhando o conteudo da div para que fique centralizado e no meio  */
+    justify-content: center;
+    align-items: center;
+    /* definindo que o conteudo da div fique em coluna  */
+    flex-direction: column;
+}
+
+.person-content div h1{
+    
+    color: transparent;
+    /* espaçamento interno */
+    padding: 0px 4px;
+    position: relative;
+    /* comando para que a animação criada fique do tamanho do conteudo */
+    width: fit-content;
+
+    font-size: 4.5rem;
+    line-height: 6rem;
+    /* Instanciando a animação pela variavel/tempo/efeito/permanencia */
+    animation: written_text .5s ease forwards;
+}
+/* definindo cada um dos meus h1 e informando um delay para aparecer na tela */
+.person-name :nth-child(1){
+    animation-delay: 1s;
+}
+.person-name :nth-child(2){
+    animation-delay: 2s;
+}
+.person-name :nth-child(3){
+    animation: written_text_name .5s ease forwards ;
+    animation-delay: 3s;
+}
+
+.person-content div h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0px;
+    height: 100%;
+    background: var(--color-blue);
+
+    animation: written_text_box .5s ease ;
+    animation-delay: .4s;
+
+}
+
+.person-name :nth-child(1) span{
+     animation-delay: .5s; 
+  
+}
+.person-name :nth-child(2) span{
+     animation-delay: 1.5s; 
+  
+}
+.person-name :nth-child(3) span{
+     animation-delay: 2.5s; 
+  
+}
+
+.person-name {
+    margin-top: 11rem;
+}
+
+.stacks-content{
+    display: flex;
+      align-items: center;  
+    justify-content: center;
+
+    flex-direction: column;
+     margin-top: 6rem; 
+
+
+}
+.stacks-content h3{
+    color: var(--color-white);
+    font-size: 1.15rem;
+    margin-left: 20px;
+
+}
+
+.stacks  {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.stacks ul li{
+   display: flex;
+   align-items: center;
+   position: relative;
+
+   margin: 10px;
+   padding: 10px;
+
+   list-style: none;
+
+}
+/* definindo tamanho dos icones das tecnologias */
+.stacks ul li img{
+    width: 30px;
+    height: auto;
+    transition: transform .3s ease;
+
+    
+}
+/* acessando das div e as imagens e colocando um efeito ao passar o mouse em cima */
+.stacks ul li div img:hover{
+    /* transform scale ajusta a imagem para aumentar ao passar o mouse em 1.2 pixel */
+    transform: scale(1.2);
+    cursor: pointer;
+
+}
+.stacks ul li div:hover::after{
+    content: attr(data);
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+
+    color: var(--color-white);
+
+}
+
+
+.person-background{
+    height: 100vh;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    /* definindo plano de fundo */
+    background-image: url(./img/james-harrison-vpOeXr5wmR4-unsplash.jpg);
+    /* ajustando esse plano de fundo de acordo com o tamanho da div */
+    background-size: cover;
+    /* definindo plano de fundo sempre em cima e centralizado */
+    background-position: top center;
+
+    z-index: 1;
+}
+
+.person-background::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    opacity: .7 ;
+    z-index: -1;
+
+    /* definindo efeito de degrade e transparente na imagem de fundo (90deg seria 90 graus a posição da transparencia definido em preto) */
+    background: linear-gradient(90deg, transparent 30%, var(--color-black)),
+    linear-gradient(180deg, transparent 30%, var(--color-black)),
+     linear-gradient(0deg, transparent 65%, var(--color-black));
+
+}
+.wrapper-profile-photo{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px;
+    margin: 20px 15px;
+
+    border-radius: 50%;
+    background: radial-gradient(rgba(0,0,0,0.15) 60%, transparent 0),
+    radial-gradient(#000 68%, transparent 0),
+    linear-gradient(to top right, #ffa500 0%, #ff1493 100% );
+       
+}
+
+.wrapper-profile-photo img{
+    width: 100%;
+    height: 340px; 
+    /* deixando a foto redonda  */
+    border-radius: 50%;
+}
+
+
+.links img{
+    width: 30px;
+    height: 30px;
+
+    margin: 10px;
+    filter: brightness(.8);
+    transition: all .3s ease;
+}
+
+.links a img:hover{
+    transform: scale(1.15);
+    filter: brightness(1);
+   
+}
+ /* Fim primeira página */
+#about{
+    height: 100vh;
+    width: 100%;
+    background: var(--color-black);
+
+    display:flex;
+    color: var(--color-white);
+}
+
+.background-about{
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-wrapper{
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+.img-wrapper::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background: 
+        linear-gradient(.25turn, transparent 30%, var(--color-black)),
+        linear-gradient(.5turn, transparent 30%, var(--color-black)),
+        linear-gradient(1turn, transparent 65%, var(--color-black));
+        
+}
+
+.img-wrapper img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+}
+
+.box-about{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 50%;
+    padding: 3rem;
+}
+
+.section-subtitle h2 p{
+    display: inline-block;
+    font-size: 3rem;
+}
+.section-subtitle h2 p:nth-child(2) span{
+    padding: 3px 5px;
+    border-radius: 4px;
+
+    color: var(--color-black);
+    background: var(--color-white);
+}
+
+.box-about h3{
+    margin: 3rem;
+    font-size: 2rem;
+}
+
+.box-about h3 p{
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
+
+    width: fit-content;
+    color: var(--color-black);
+    background: var(--color-blue);
+}
+
+.box-about h4{
+    margin: 1rem 3rem;
+    font-size: 1.5rem;
+}
+
+.box-about h4 p{
+    display: inline;
+    padding: 2px 4px;
+    color: var(--color-blue);
+    font-size: bold;
+    font-weight: 1.75rem;
+}
+
+.button-cta{
+    display: flex;
+    max-width: 190px;
+    margin: 4rem 3rem;
+}
+
+.button-cta a{
+    display: inline-block;
+    width: 100%;
+    max-width: 172px;
+
+    padding: 10px;
+    margin-bottom: 3rem;
+    font-size: 1.3rem;
+
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: .15rem;
+    background: var(--color-white);
+    color: var(--color-black);
+
+    text-align: center;
+    text-decoration: none;
+
+    border-radius:  10px;
+
+    cursor: pointer;
+}
+.button-cta a:hover{
+    transition: all .3s ease;
+    filter: brightness(.8);
+
+}
+
+/* Fim página sobre */
+
+#projects{
+    height: 100vh;
+    width: 100%;
+    background: var(--color-black);
+
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.projects-title h2{
+    margin: 3rem;
+    padding: 1rem;
+
+    font-size: 3rem;
+    color: var(--color-white);
+
+}
+
+/*.wrapper-projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    
+    height: 500px;
+    margin-top: 2rem;  
+}*/
+
+.container-projects{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.swiper{
+   height: 100%;
+   width: 100%;
+
+   max-width: 1020px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   flex-direction: row;
+    
+   height: 500px;
+   margin-top: 2rem;  
+
+
+}
+
+.card-projects{
+   /* width: 320px;
+    height: 450px;*/
+
+
+    height: 100%;
+    width: 100%;
+
+    padding: 30px 20px 20px;
+  /*  margin-top: 0 10px;
+    margin-left: 3%;*/
+
+    position: relative;
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 20px;
+    z-index: 1;
+
+}
+
+.card-projects::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 40%;
+    width: 100%;
+    background-color:var(--color-blue);
+    border-radius: 20px 20px 0px 0px ;
+
+    z-index: -1;
+}
+/*.content-projects{
+    height: 100%;
+    width: 100%;
+
+    
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}*/
+.image-projects{
+    max-height: 240px;
+    max-width: 250px;
+
+    height: 100%;
+    width: 100%;
+    position: relative;
+   
+    overflow: hidden;
+   
+
+    border-radius: 30px;
+
+    border: 4px solid var(--color-blue);
+    margin: 0 auto;
+
+}
+
+.image-projects  a img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    border: 2px solid var(--color-white);
+    transition: transform .3s ease-out;
+    cursor: pointer;
+
+}
+
+.image-projects img:hover{
+    transform: scale(1.1);
+
+
+}
+.card-projects span{
+    color: var(--color-black);
+    font-weight: bold;
+    font-size: 1.7rem;
+
+    margin: .75rem auto .5rem auto;
+}
+
+.card-projects p{
+   color: var(#3d3d4b);
+   font-weight: bold;
+   font-size: 1.1rem;
+   margin: 0rem .74rem;
+}
+
+.cta-project{
+    width: 200px;
+    margin: auto auto 15px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+ 
+
+}
+.cta-project a{
+    padding: 5px 16px;
+    font-size: 1.35rem;
+    color: var(--color-white);
+    background: var(--color-blue);
+    border-radius: 10px;
+    text-decoration: none;
+
+    transition: opacity .3s ease;
+
+}
+
+.cta-project a:hover{
+    opacity: .7;
+
+}
+/* Fim da página projetos */
+
+#contatos {
+    display: flex ;
+    flex-direction: column;
+     
+    height: 40vh;
+    width: 100%;
+
+    background: var(--color-black);
+
+    color: var(--color-white);
+}
+
+.contato-icon h2{
+    margin: 3rem  ;
+    padding: 1rem ;
+
+    font-size: 3rem;
+    color: var(--color-white);
+}
+.contact-icon-wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.contact-icon-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 0rem 3rem;
+    padding: 1rem;
+}
+
+.contact-icon{
+    height: 40px;
+    width: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 2rem;
+    background: var(--color-white);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.contact-icon i{
+    font-size: 2rem;
+    color: var(--color-blue);
+}
+
+.contact-info span{
+    font-size: 1.2rem;
+    font-weight: bold;
+
+}
+
+.contact-info p{
+    margin: .25rem  0rem;
+}
+  
+.contact-info a {
+    margin: .25rem 0rem;
+    text-decoration: none;
+    color: var(--color-white);
+    display: block;
+}
+
+.contact-info a:hover{
+    transition: color .3s ease;
+    color: var(--color-blue);
+  
+}
+/* fim da parte contatos */
+
+#footer{
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+
+    background: #191919;
+
+}
+
+.container-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    color: var(--color-white);
+}
+/*fim do footer*/
+
+/* Responsavel por executar as animações do site  */
+@keyframes written_text {
+    100%{
+        color: var(--color-white)
+    }
+}
+@keyframes written_text_name {
+    100%{
+        color: var(--color-blue);
+    }
+}
+@keyframes written_text_box {
+    50%{
+        width: 100%;
+        left: 0;
+        
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
